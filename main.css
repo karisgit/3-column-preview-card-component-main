@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100..900&family=Lexend+Deca:wght@100..900&display=swap");
+/* || REST */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* || VARIABLES */
+:root {
+  /* COLORS */
+  --SEDANS-BG: #e28625;
+  --SUV-BG: #006971;
+  --LUXURY-BG: #004140;
+  --BUTTON-BG: #f2f2f2;
+  --TITLE_CLR: #f2f2f2;
+  --DESCRIPTION-CLR: hsla(0, 0%, 100%, 0.75);
+  --BODY-BG: #f2f2f2;
+
+  /* GRADIENTS */
+
+  /* TYPOGRAPHY */
+  --FF2: "Big Shoulders Display", sans-serif;
+  --FF1: "Lexend Deca", sans-serif;
+
+  --TITLE: bold 2.5rem var(--FF2);
+  --DESCRIPTION: normal 0.9375rem/1.5625rem var(--FF1);
+  --CTA: normal 0.9375rem/1.5625rem var(--FF1);
+}
+
+/* || UTILITY CLASSES */
+.offscreen {
+  position: absolute;
+  left: -10000px;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.center {
+  text-align: center;
+}
+
+.responsive-image {
+  display: none;
+}
+
+/* MOBILE FIRST DESIGN */
+/* || GENERAL STYLES */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  max-width: 100%;
+  overflow-x: hidden;
+  background-color: var(--BODY-BG);
+  display: grid;
+  place-content: center;
+}
+
+h1,
+h2 {
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  font-weight: normal;
+}
+
+a:any-link {
+  text-decoration: none;
+  color: black;
+}
+
+/* car-types card */
+.car-types__card {
+  max-width: 327px;
+  min-height: 1326px;
+  border-radius: 8px;
+  margin: 5.5rem auto;
+  overflow: hidden;
+  display: flex;
+  flex-flow: column;
+}
+
+/* car-types type */
+.car-types__type {
+  width: 100%;
+  height: 33.33%;
+  padding: 3rem 2.9688rem 2.37rem 3.0313rem;
+}
+
+.car-types__type--sedans {
+  background-color: var(--SEDANS-BG);
+}
+.car-types__type--suvs {
+  background-color: var(--SUV-BG);
+}
+.car-types__type--luxury {
+  background-color: var(--LUXURY-BG);
+}
+
+.car-types__title {
+  margin: 2.1875rem 0px 1.5625rem;
+  font: var(--TITLE);
+  color: var(--TITLE_CLR);
+  text-transform: uppercase;
+}
+
+.car-types__description {
+  margin-bottom: 25px;
+  font: var(--DESCRIPTION);
+  color: var(--DESCRIPTION-CLR);
+  max-width: 231px;
+}
+
+.car-types__cta {
+  display: block;
+  width: 146px;
+  height: 48px;
+  border-radius: 25px;
+  background-color: var(--BUTTON-BG);
+  font: var(--CTA);
+  padding: 0.6875rem 1.9688rem 0.75rem 1.9688rem;
+}
+
+.car-types__type--sedans .car-types__cta {
+  color: var(--SEDANS-BG);
+}
+.car-types__type--suvs .car-types__cta {
+  color: var(--SUV-BG);
+}
+.car-types__type--luxury .car-types__cta {
+  color: var(--LUXURY-BG);
+}
+
+/* tablet and desktop */
+
+@media screen and (min-width: 992px) {
+      /* car-types card */
+      .car-types__card {
+        max-width: 920px;
+        min-height: 500px;
+        border-radius: 8px;
+        margin: 10.6875rem 8.0625rem;
+        flex-flow: row;
+      }
+
+      .car-types__type {
+      width: 33.33%;
+      height: 100%;
+      padding: 3rem 2.9688rem ;
+    }
+
+    .car-types__description {
+      margin-bottom: 83px;
+      max-width: 212px;
+    }
+
+    .car-types__cta {
+      padding: 0.6875rem 1.9688rem 0.75rem 1.9688rem;
+    }
+    .car-types__cta:hove, .car-types__cta:focus-visible{
+      background-color: rgb(255, 255, 255, 0);
+      color: white;
+      border: 2px solid white;
+
+    }
+
+}
